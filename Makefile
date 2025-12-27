@@ -25,6 +25,14 @@ $(TARGETS): %: %.o util.o
 util.o: util.c
 	$(CC) -c util.c -o util.o
 
+
+# Check target for debugging and running with valgrind
+check: $(TARGETS)
+	@for target in $(TARGETS); do \
+		echo "Running Valgrind on $$target..."; \
+		valgrind --leak-check=full ./$$target; \
+	done
+
 # Clean up
 clean:
 	rm -f $(TARGETS) *.o
