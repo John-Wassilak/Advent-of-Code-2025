@@ -91,7 +91,6 @@ long long solve_part_1(ll_Long *parsed_input) {
     return result;
 }
 
-
 long long solve_part_2(ll_Long *parsed_input) {
     char str[21]; // Buffer for up to 64-bit integer
     char tmp[21]; // Buffer for string comparison

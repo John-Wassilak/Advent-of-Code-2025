@@ -46,9 +46,8 @@ void free_ll(ll_Input *input) {
         current = input;
         input = current->next;
         free(current);
-    }        
+    }
 }
-
 
 int solve_part_1(ll_Input *parsed_input) {
     int current = 50;
