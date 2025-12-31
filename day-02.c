@@ -1,12 +1,8 @@
-
 #include "util.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
-char test_data[] = "11-22,95-115,998-1012,1188511880-1188511890,222220-222224,"
-                   "1698522-1698528,446443-446449,38593856-38593862,565653-"
-                   "565659,824824821-824824827,2121212118-2121212124";
 
 typedef struct LongNode {
     long long data;
@@ -63,6 +59,7 @@ void free_ll_Long(ll_Long *input) {
     }
 }
 
+
 long long solve_part_1(ll_Long *parsed_input) {
     char str[21]; // Buffer for up to 64-bit integer
     long long i, start, end;
@@ -91,6 +88,7 @@ long long solve_part_1(ll_Long *parsed_input) {
     return result;
 }
 
+
 long long solve_part_2(ll_Long *parsed_input) {
     char str[21]; // Buffer for up to 64-bit integer
     char tmp[21]; // Buffer for string comparison
@@ -98,7 +96,7 @@ long long solve_part_2(ll_Long *parsed_input) {
     int seq_width, reps, j, len, half;
     long long result = 0;
 
-    while (parsed_input) {
+    while (parsed_input) { // ll_loop
         start = parsed_input->data;
         parsed_input = parsed_input->next;
         end = parsed_input->data;
@@ -117,7 +115,7 @@ long long solve_part_2(ll_Long *parsed_input) {
 
                     // construct string by repeating sequence
                     reps = len / seq_width;
-                    tmp[0] = '\0';
+                    tmp[0] = '\0'; // critical for strncat
                     for (j = 0; j < reps; j++) {
                         strncat(tmp, str, seq_width);
                     }
