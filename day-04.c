@@ -117,12 +117,10 @@ int count_marked_rolls(Dynamic2DArray *input) {
 
     for (int row = 0; row < input->rows; row++) {
         for (int col = 0; col < input->cols; col++) {
-            //            printf("%c ", input->array[row][col]);
             if (input->array[row][col] == 'x') {
                 accessible_rolls++;
             }
         }
-        //        printf("\n");
     }
 
     return accessible_rolls;
