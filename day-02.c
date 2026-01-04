@@ -3,7 +3,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-
+// something about this is way slow in debug
+// I assume the linked list, should just be an array...
 typedef struct LongNode {
     long long data;
     struct LongNode *next;

@@ -5,10 +5,11 @@ CC = gcc
 CFLAGS = -lcurl -Wall -Wextra -Wpedantic -Werror
 
 # Target executables and their source files
-TARGETS = day-01 day-02 day-03
+TARGETS = day-01 day-02 day-03 day-04
 SRCS_day-01 = day-01.c util.c
 SRCS_day-02 = day-02.c util.c
 SRCS_day-03 = day-03.c util.c
+SRCS_day-04 = day-04.c util.c
 
 # Default target
 all: $(TARGETS)
